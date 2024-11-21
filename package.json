@@ -9,7 +9,7 @@
     "dev": "npm run dev-server",
     "dev-task": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "start": "npm run dev",
     "start-remote": "vite --host"
