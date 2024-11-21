@@ -6,7 +6,7 @@ export default defineConfig({
   base: "/",
   build: {
     sourcemap: true,
-    assetsDir: "code",
+    assetsDir: "",
     target: ["esnext"],
     cssMinify: true,
     lib: false
