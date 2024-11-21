@@ -10,7 +10,10 @@
     "dev-task": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --config vite.config.prod.ts",
+    "build:dev": "tsc && vite build --config vite.config.dev.ts",
+    "build:prod": "tsc && vite build --config vite.config.prod.ts",
+    "preview": "vite preview",
     "start": "npm run dev",
     "start-remote": "vite --host"
   },

@@ -57,4 +57,35 @@ const updateName = async (event) => {
     await self.widgets.updateByInstanceId(event.instanceId, payload);
 }
 
+workbox.setConfig({ debug: true });
+
+// Fallback to an offline page for navigation requests
+workbox.routing.registerRoute(
+    ({ request }) => request.mode === 'navigate',
+    async ({ event }) => {
+        try {
+            // Attempt to fetch the requested page from the network
+            return await workbox.strategies.networkFirst().handle({ event });
+        } catch (error) {
+            // Fallback to offline.html if the fetch fails
+            return await caches.match('/offline.html');
+        }
+    }
+);
+
+// Cache other static assets with CacheFirst strategy
+workbox.routing.registerRoute(
+    ({ request }) =>
+        ['style', 'script', 'image'].includes(request.destination),
+    new workbox.strategies.CacheFirst({
+        cacheName: 'static-assets',
+        plugins: [
+            new workbox.expiration.ExpirationPlugin({
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // Cache for 30 days
+            }),
+        ],
+    })
+);
+
 workbox.precaching.precacheAndRoute(self.__WB_MANIFEST || []);
