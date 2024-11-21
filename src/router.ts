@@ -30,6 +30,22 @@ export const router = new Router({
           lazy(() => import('./pages/app-about/app-about.js')),
         ],
         render: () => html`<app-about></app-about>`
+      },
+      {
+        path: resolveRouterPath('email'),
+        title: 'Email',
+        plugins: [
+          lazy(() => import('./pages/app-email/app-email.js')),
+        ],
+        render: () => html`<app-email></app-email>`
+      },
+      {
+        path: resolveRouterPath('customer'),
+        title: 'Customer',
+        plugins: [
+          lazy(() => import('./pages/app-customer/app-customer.js')),
+        ],
+        render: () => html`<app-customer></app-customer>`
       }
     ]
   });
