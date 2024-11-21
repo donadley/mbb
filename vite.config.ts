@@ -5,10 +5,10 @@ import { copyFileSync } from 'fs'; // Import to handle copying files
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/",
+  base: "/mbb",
   build: {
     sourcemap: true,
-    assetsDir: "",
+    assetsDir: "code",
     target: ["esnext"],
     cssMinify: true,
     lib: false
