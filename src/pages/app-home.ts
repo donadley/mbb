@@ -129,6 +129,8 @@ export class AppHome extends LitElement {
           </sl-card>
 
           <sl-button href="${resolveRouterPath('about')}" variant="primary">Navigate to About</sl-button>
+            <sl-button href="${resolveRouterPath('email')}" variant="primary">Navigate to Email</sl-button>
+          <sl-button href="${resolveRouterPath('customer')}" variant="primary">Navigate to Custumer</sl-b
         </div>
       </main>
     `;
