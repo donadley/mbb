@@ -1,4 +1,4 @@
-import{i as p,r as d,x as u,s as f,a as m,t as c}from"./index-CY3Q9nK5.js";import{a as h}from"./db-lsGyomYS.js";const b=p`
+import{i as p,r as d,x as u,s as f,a as m,t as c}from"./index-xHyQqOaH.js";import{a as h}from"./db-lsGyomYS.js";const b=p`
   @media(min-width: 1000px) {
     sl-card {
       max-width: 70vw;
@@ -94,4 +94,4 @@ import{i as p,r as d,x as u,s as f,a as m,t as c}from"./index-CY3Q9nK5.js";impor
         </form>
       </div>
     `}};s.styles=[f,b];l([m()],s.prototype,"firstName",2);l([m()],s.prototype,"email",2);s=l([c("app-email")],s);export{s as AppEmail};
-//# sourceMappingURL=app-email-BUtuIGM2.js.map
+//# sourceMappingURL=app-email-D83FnHBG.js.map
