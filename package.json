@@ -2,12 +2,14 @@
   "name": "mbb",
   "version": "0.0.1",
   "description": "A starter kit for building PWAs!",
+  "homepage": "https://donadley.github.io/mbb/",
   "main": "index.js",
   "scripts": {
     "dev-server": "vite --open",
     "dev": "npm run dev-server",
     "dev-task": "vite",
-    "deploy": "npx @azure/static-web-apps-cli login --no-use-keychain && npx @azure/static-web-apps-cli deploy",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "tsc && vite build",
     "start": "npm run dev",
     "start-remote": "vite --host"
@@ -24,6 +26,7 @@
     "workbox-precaching": "^7.3.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "typescript": "^5.6.3",
     "vite": "^5.4.11",
     "vite-plugin-pwa": "^0.20.5"
